@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-xfinity-black text-xfinity-gray-100 antialiased;
+    font-family: 'Xfinity Sans', 'Century Gothic', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-red px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-brand-red-hover hover:shadow-lg hover:shadow-brand-red/30 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-xfinity-gray-600 bg-xfinity-gray-850 px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:border-xfinity-gray-400 hover:bg-xfinity-gray-800 active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-xfinity-gray-200 transition-all duration-200 hover:bg-xfinity-gray-800 hover:text-white;
+  }
+
+  .card {
+    @apply rounded-2xl border border-xfinity-gray-700 bg-xfinity-gray-900 transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:border-xfinity-gray-500 hover:bg-xfinity-gray-850 hover:shadow-xl hover:shadow-black/40;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-xfinity-gray-600 bg-xfinity-gray-850 px-4 py-3 text-sm text-white placeholder-xfinity-gray-400 transition-all duration-200 focus:border-brand-red focus:outline-none focus:ring-2 focus:ring-brand-red/20;
+  }
+
+  .section-container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* Shimmer effect for loading */
+.shimmer-bg {
+  background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s linear infinite;
+}
